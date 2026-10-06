@@ -1,0 +1,20 @@
+name: GitHub Website Submission
+description: Submit your GitHub Blog 
+title: "Enter the name of your blog"
+labels: ["submission"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Your Full Name
+      placeholder: "e.g., Barry Allen"
+    validations:
+      required: true
+
+  - type: input
+    id: pages_link
+    attributes:
+      label: Website Link
+      placeholder: "https://username.github.com/blog"
+    validations:
+      required: true

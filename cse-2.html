@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSE II - Digital Directory</title>
+    <style>
+        :root {
+            --cream: #fdfbf7;
+            --cream-dark: #f0ebd8;
+            --gold: #d4af37;
+            --gold-dark: #b5952f;
+            --text-main: #2c2a25;
+            --text-muted: #7a7566;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text-main);
+            font-family: 'Garamond', 'Georgia', serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .directory-container {
+            max-width: 800px;
+            width: 100%;
+            background: var(--cream);
+            border: 4px double var(--gold);
+            padding: 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .directory-header {
+            text-align: center;
+            border-bottom: 1px solid var(--gold);
+            padding-bottom: 20px;
+            margin-bottom: 40px;
+        }
+
+        h1 {
+            color: var(--gold-dark);
+            font-size: 2.2rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            margin: 0 0 10px 0;
+            font-weight: normal;
+        }
+
+        .subtitle {
+            font-style: italic;
+            color: var(--text-muted);
+            letter-spacing: 1px;
+        }
+
+        h2 {
+            color: var(--gold-dark);
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 40px;
+            display: flex;
+            align-items: center;
+            font-weight: normal;
+        }
+
+        h2::after {
+            content: "";
+            flex: 1;
+            margin-left: 15px;
+            height: 1px;
+            background: var(--gold);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        li {
+            padding: 12px 0;
+            border-bottom: 1px dashed var(--cream-dark);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background 0.3s ease;
+        }
+
+        li:hover {
+            background-color: rgba(212, 175, 55, 0.03);
+        }
+
+        .student-name {
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .active-link {
+            color: var(--gold-dark);
+            text-decoration: none;
+            border: 1px solid var(--gold);
+            padding: 4px 12px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .active-link:hover {
+            background: var(--gold);
+            color: var(--cream);
+        }
+
+        .pending-status {
+            color: var(--text-muted);
+            font-style: italic;
+            font-size: 0.95rem;
+        }
+
+        @media (max-width: 600px) {
+            li {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 8px;
+            }
+            .directory-container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="directory-container">
+        <header class="directory-header">
+            <h1>Website Directory</h1>
+            <div class="subtitle">Department of Computer Science & Engineering — Cohort II</div>
+        </header>
+
+        <section>
+            <h2>Webcraft</h2>
+            <ul>
+                <li>
+                    <span class="student-name">KAVITHASHREE B</span>
+                    <a href="https://kavithashree-eng.github.io/kavithashree/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">A KOHULAN</span>
+                    <a href="https://kohulan754-stack.github.io/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">MEGARSHITH PACHA</span>
+                    <a href="https://achu1234nn.github.io/speed/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">NAVEENA M S</span>
+                    <a href="https://naveeenaa.github.io/naveeenaaa/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">POORNASHRI S</span>
+                    <a href="https://beingpoornashri.github.io/Poornashri-/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">KARTHIKEYAN S</span>
+                    <a href="https://karthi18sekar-sketch.github.io/My-website-/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">KARTHIKEYAN S</span>
+                    <a href="https://karthikeyanskarthik694-hub.github.io/My-website-/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">KAVITHA S</span>
+                    <a href="https://kavitha403.github.io/kavitha-portfolio/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">KHAJA MOHIDEEN P</span>
+                    <a href="https://khajafahim.github.io/Website/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">KISHORE V</span>
+                    <a href="https://kishorevijayakanth126.github.io/My-website/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">LAVANYA G</span>
+                    <a href="https://lavanyaganesan166-ui.github.io/My-portfolio-website-/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">LOHENDRA TG</span>
+                    <a href="https://lohendra12logu-sketch.github.io/My-portfolio/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">LOKESHWER V K</span>
+                    <a href="https://lokeshwervk.github.io/blog/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">P MADHUKRISHNA</span>
+                    <a href="https://madhukrishna0708.github.io/portofolio/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">MANISH M</span>
+                    <a href="https://manishmari96.github.io/Manish/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">MUGUNTHA PRIYAN S</span>
+                    <a href="https://mugunthan1810.github.io/My-website-/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">PRAWIN KUMAR K</span>
+                    <a href="https://prawinkumark.github.io/Nano/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">RAGAVI E</span>
+                    <a href="https://ragavi1904.github.io/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">RAGUL R</span>
+                    <a href="https://ragulnexus.github.io/Ragul-nexus.-io/#contact" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+                <li>
+                    <span class="student-name">T LAKSHITHA DEVI</span>
+                    <a href="https://tlakshithadevi31-pixel.github.io/portfolio/" class="active-link" target="_blank" rel="noopener noreferrer">View Portal</a>
+                </li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Not created</h2>
+            <ul>
+                <li><span class="student-name">KALEELUR RAHMAN S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KAMESHH V</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KANISHKA M</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KARTHIKEYAN S (14-03-2008)</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KARTHIKEYAN S (04-03-2009)</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KASI VISWANATHAN</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KATHIKSHA V</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KAVINILA M</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KAVITHA S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">K KAVIYA SRI</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KEERTHIKA M</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KHAJA MOHIDEEN P</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">B KIRTHIKA SRI</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">B KIRUTHIKA</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KISHOR S S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KISHORE KUMAR D E</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KISHORE V</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KOWSHIK KAMAL L</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">KRISHNAVARSHINI S V</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">T LAKSHITHA DEVI</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">LAVANYA G</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">LAVANYA R</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">LOHENDRA TG</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">LOKESHWER V K</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">MADHAAVAN D</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">P MADHUKRISHNA</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">MADHUMATHI S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">MANISH M</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">MOHAMMED MAGTHUM P</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">MOHANA KRISHNA MURTHY S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">MUGUNTHA PRIYAN S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">A MUHAMMAD NAWFAL RIYAZ</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">MUKILAN S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">NANDHINI M</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">R NANDITA</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">NARENDRAN K</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">NETHRA S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">NITHYAPRIYA S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">NIVETHA T</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">NIVETHA V</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">NIWIN KUMAR S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">OVIYA P</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PAVITHRA S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PHILIP P</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">POORNASHRI S</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PRABAKAR A</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PRASANNA KUMAR P</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PRASANTH R</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PRAVEEN KUMAR M</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PRAWIN KUMAR K</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PREETHI SRI.A</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">PRINCY J</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">RAGAV KRISHNA V</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">RAGAVI E</span> <span class="pending-status">Yet to create</span></li>
+                <li><span class="student-name">RAGUL R</span> <span class="pending-status">Yet to create</span></li>
+            </ul>
+        </section>
+    </div>
+
+</body>
+</html>

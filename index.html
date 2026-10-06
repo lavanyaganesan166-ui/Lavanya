@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security Blog Directory</title>
+
+<style>
+  body {
+    margin: 0;
+    padding: 20px;
+    background: linear-gradient(135deg,#f7f5ef,#ece8df);
+    font-family: "Inter", sans-serif;
+    color: #222;
+  }
+
+  h2 {
+    text-align: center;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    font-weight: 700;
+  }
+
+  #controls {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  select {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #aaa;
+    font-size: 1rem;
+    background: white;
+    cursor: pointer;
+  }
+
+  .entry {
+    padding: 16px 14px;
+    margin-bottom: 14px;
+    background: rgba(255,255,255,0.7);
+    border-radius: 14px;
+    border: 1px solid #dcdcdc;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.15s, box-shadow 0.15s;
+  }
+
+  .entry:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.14);
+  }
+
+  .line1 {
+    font-size: 1.05rem;
+    font-weight: 600;
+    margin-bottom: 6px;
+  }
+
+  .reg {
+    font-weight: 500;
+    color: #555;
+  }
+
+  .line2 {
+    font-size: 0.95rem;
+  }
+
+  .link-live { color: #0a7a28; font-weight: 600; text-decoration: none; }
+  .link-dead { color: #b40000; font-weight: 600; }
+
+</style>
+</head>
+
+<body>
+
+<h2>First Year Cyber Security (2025–2029)<br>Blog Directory</h2>
+
+<div id="controls">
+  <select id="sortSelect">
+    <option value="nameAsc">Sort: Name A → Z</option>
+    <option value="nameDesc">Sort: Name Z → A</option>
+  </select>
+</div>
+
+<div id="list"></div>
+
+<script>
+let entriesData = [
+  { name: "AKSHAYA N", reg: "25CY001", isLive: 1, statusHTML: `<a href="https://akshaya27-stack.github.io/Blog/" target="_blank" class="link-live">Visit Site ✔</a>` },
+
+{ name: "Barath Chand Pach", reg: "25CY004", isLive: 1, statusHTML: `<a href="https://barry-chand.github.io/Blog/" target="_blank" class="link-live">Visit Site ✔</a>` },
+
+
+
+
+  { name: "BHUMIKA.B", reg: "25CY005", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "DHAYALAN K", reg: "25CY007", isLive: 1, statusHTML: `<a href="https://lyqorrr.github.io/blog/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "DHINAKARAN K K", reg: "25CYS008", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "F. KESHINI", reg: "142225128021", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "GUNASEELAN V", reg: "25CY013", isLive: 1, statusHTML: `<a href="https://gunaseelanvijayaragavan.github.io/blog/index.html" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "GURU VIGNESH C", reg: "25CYS014", isLive: 0, statusHTML: `<span class="link-dead">Invalid: GitHub Repo Link ✖</span>` },
+  { name: "JAYASURYA", reg: "25CY015", isLive: 1, statusHTML: `<a href="https://kgjayasurya20-max.github.io/jayasurya.github.io/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "KARTHIKEYAN P", reg: "25CY018", isLive: 1, statusHTML: `<a href="https://s5676bhn.github.io/Karthikeyan.github.io/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "KAVITHASHREE", reg: "27may2008", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "KAVITHASHREE B", reg: "27may2008", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "MAHATHI . S", reg: "25CY022", isLive: 1, statusHTML: `<a href="https://maha19-03.github.io/mahathi.github.io/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "MEENAKSHI B", reg: "25CY023", isLive: 0, statusHTML: `<span class="link-dead">Invalid: GitHub Repo Link ✖</span>` },
+  { name: "MEGARSHITH PACHA", reg: "Unknown", isLive: 1, statusHTML: `<a href="https://achu1234nn.github.io/spped/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "MONESH R", reg: "25CYS025", isLive: 0, statusHTML: `<span class="link-dead">Invalid: GitHub Repo Link ✖</span>` },
+  { name: "MONESH R", reg: "25CYS025", isLive: 0, statusHTML: `<span class="link-dead">Invalid: GitHub Repo Link ✖</span>` },
+  { name: "NAVEEN.R", reg: "25CY026", isLive: 1, statusHTML: `<a href="https://naveen-cyber-web.github.io/Naveen-cyber-web/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "NAVEENA M S", reg: "Unknown", isLive: 0, statusHTML: `<span class="link-dead">Invalid: GitHub Repo Link ✖</span>` },
+  { name: "NETHRA", reg: "Unknown", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "NETHRA", reg: "8778320341", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "NIVETHA V", reg: "Unknown", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "PAVITHRA S", reg: "10 June 2009", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "POORNASHRI S", reg: "Unknown", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "RITHIK", reg: "25cy033", isLive: 1, statusHTML: `<a href="https://rk-rithik.github.io/Rithik.github.io/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "S NIMISHA SRI", reg: "25CY027", isLive: 1, statusHTML: `<a href="https://Nimishasekar30.github.io" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "S NIMISHA SRI", reg: "25CY027", isLive: 1, statusHTML: `<a href="https://Nimishasekar30.github.io" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "SWETHA .S", reg: "25CY038", isLive: 1, statusHTML: `<a href="https://swetha2007sudha-eng.github.io/Blog-/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "VINOTH KUMAR", reg: "25CYS042", isLive: 0, statusHTML: `<span class="link-dead">Invalid URL ✖</span>` },
+  { name: "VISHMITHA D", reg: "25CY043", isLive: 1, statusHTML: `<a href="https://vishmithad07-stack.github.io/Blog-/" target="_blank" class="link-live">Visit Site ✔</a>` },
+  { name: "VISHMITHA D", reg: "25CY043", isLive: 0, statusHTML: `<span class="link-dead">Invalid: GitHub Repo Link ✖</span>` }
+];
+
+function renderList() {
+  const list = document.getElementById("list");
+  list.innerHTML = "";
+
+  entriesData.forEach(e => {
+    const card = document.createElement("div");
+    card.className = "entry";
+    card.innerHTML = `
+      <div class="line1">
+         ${e.name} <span class="reg">(${e.reg})</span>
+      </div>
+      <div class="line2">${e.statusHTML}</div>
+    `;
+    list.appendChild(card);
+  });
+}
+
+function sortData(type) {
+  if (type === "nameAsc") entriesData.sort((a,b)=>a.name.localeCompare(b.name));
+  if (type === "nameDesc") entriesData.sort((a,b)=>b.name.localeCompare(a.name));
+  
+  renderList();
+}
+
+document.getElementById("sortSelect").addEventListener("change", e => {
+  sortData(e.target.value);
+});
+
+// Initialize app with sorting
+sortData("nameAsc");
+
+</script>
+
+</body>
+</html>
